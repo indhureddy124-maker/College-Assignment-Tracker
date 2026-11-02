@@ -1,0 +1,70 @@
+* { box-sizing: border-box; }
+:root { color-scheme: light; --ink: #172033; --muted: #697386; --line: #e5e9f0; --blue: #315ee7; }
+body { margin: 0; font-family: Inter, system-ui, -apple-system, Segoe UI, sans-serif; background: #f4f6fb; color: var(--ink); }
+.container { width: min(1050px, calc(100% - 32px)); margin: 42px auto; }
+.hero { display: flex; justify-content: space-between; align-items: center; padding: 34px; border-radius: 22px; color: white; background: linear-gradient(120deg, #263d83, #4778ed); box-shadow: 0 14px 35px #294b9b24; }
+.eyebrow { margin: 0 0 9px; font-size: 11px; letter-spacing: 2px; font-weight: 800; opacity: .8; }
+h1 { margin: 0; font-size: clamp(26px, 4vw, 38px); }
+.subtitle { margin: 10px 0 0; color: #e1e9ff; }
+.hero-mark { display: grid; place-items: center; width: 64px; height: 64px; border-radius: 20px; background: #ffffff20; font-size: 36px; font-weight: 800; }
+.stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin: 20px 0; }
+.stat, .panel { background: white; border: 1px solid var(--line); border-radius: 16px; box-shadow: 0 5px 18px #1e31500a; }
+.stat { padding: 19px 22px; }
+.stat span { display: block; color: var(--muted); font-size: 13px; }
+.stat strong { display: block; margin-top: 7px; font-size: 28px; }
+.panel { padding: 24px; margin-bottom: 18px; }
+h2 { margin: 0 0 18px; font-size: 19px; }
+.form-grid { display: grid; grid-template-columns: 2fr 2fr 1.2fr 1fr; gap: 13px; }
+label { display: grid; gap: 7px; font-size: 13px; color: #465168; font-weight: 650; }
+input, select { width: 100%; min-width: 0; padding: 11px 12px; border: 1px solid #dce2ec; border-radius: 9px; background: white; color: var(--ink); font: inherit; font-size: 14px; }
+input:focus, select:focus { outline: 3px solid #315ee71c; border-color: var(--blue); }
+.form-actions { display: flex; gap: 9px; margin-top: 17px; }
+button { border: 0; border-radius: 9px; padding: 11px 16px; font: inherit; font-weight: 700; cursor: pointer; }
+.primary { background: var(--blue); color: white; }
+.primary:hover { background: #244bc2; }
+.secondary { background: #edf0f6; color: #344057; }
+.hidden { display: none; }
+.list-heading { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+.list-heading h2 { margin-bottom: 4px; }
+.muted { margin: 0; color: var(--muted); font-size: 13px; }
+.filters { display: flex; gap: 9px; }
+.filters input { width: 210px; }
+.filters select { width: 145px; }
+.assignment-list { display: grid; gap: 10px; margin-top: 18px; }
+.assignment { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 15px; border: 1px solid var(--line); border-radius: 12px; }
+.assignment.done { background: #f8fafc; }
+.assignment.done .task-title { text-decoration: line-through; color: #818b9b; }
+.task-info { min-width: 0; }
+.task-title { margin: 0 0 5px; font-weight: 750; overflow-wrap: anywhere; }
+.task-meta { color: var(--muted); font-size: 12px; }
+.pills { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 7px; }
+.pill { padding: 4px 8px; border-radius: 20px; background: #eef2ff; color: #3e55a3; font-size: 11px; font-weight: 700; }
+.pill.high { background: #fff0ee; color: #b53d31; }
+.pill.low { background: #edf8f1; color: #287447; }
+.pill.completed { background: #e8f7ee; color: #287447; }
+.task-actions { display: flex; flex-shrink: 0; flex-wrap: wrap; gap: 6px; }
+.task-actions button { padding: 8px 10px; font-size: 12px; background: #eef1f7; color: #344057; }
+.task-actions .delete { color: #a33434; background: #fff0f0; }
+.empty { padding: 28px 8px; text-align: center; color: var(--muted); }
+footer { padding: 8px 0 20px; text-align: center; color: #8992a2; font-size: 12px; }
+@media (max-width: 760px) {
+  .container { margin: 20px auto; }
+  .hero { padding: 25px; }
+  .hero-mark { width: 48px; height: 48px; font-size: 27px; }
+  .form-grid { grid-template-columns: 1fr 1fr; }
+  .list-heading { align-items: stretch; flex-direction: column; }
+  .filters input { flex: 1; width: 50%; }
+  .filters select { width: 145px; }
+}
+@media (max-width: 480px) {
+  .stats { gap: 8px; }
+  .stat { padding: 13px; }
+  .stat span { font-size: 11px; }
+  .stat strong { font-size: 23px; }
+  .panel { padding: 17px; }
+  .form-grid { grid-template-columns: 1fr; }
+  .assignment { align-items: flex-start; flex-direction: column; }
+  .task-actions { width: 100%; }
+  .filters { flex-direction: column; }
+  .filters input, .filters select { width: 100%; }
+}

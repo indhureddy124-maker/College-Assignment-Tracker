@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>College Assignment Tracker</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="container">
+    <header class="hero">
+      <div>
+        <p class="eyebrow">STUDENT WORKSPACE</p>
+        <h1>College Assignment Tracker</h1>
+        <p class="subtitle">Keep your coursework organised and deadlines in sight.</p>
+      </div>
+      <div class="hero-mark" aria-hidden="true">✓</div>
+    </header>
+
+    <section class="stats" aria-label="Assignment summary">
+      <article class="stat"><span>Total assignments</span><strong id="totalCount">0</strong></article>
+      <article class="stat"><span>Pending</span><strong id="pendingCount">0</strong></article>
+      <article class="stat"><span>Completed</span><strong id="completedCount">0</strong></article>
+    </section>
+
+    <section class="panel">
+      <h2 id="formHeading">Add an assignment</h2>
+      <form id="assignmentForm">
+        <input type="hidden" id="editId">
+        <div class="form-grid">
+          <label>Assignment title
+            <input id="title" type="text" placeholder="e.g. Mathematics worksheet" maxlength="90" required>
+          </label>
+          <label>Subject
+            <input id="subject" type="text" placeholder="e.g. Engineering Mathematics" maxlength="60" required>
+          </label>
+          <label>Due date
+            <input id="dueDate" type="date" required>
+          </label>
+          <label>Priority
+            <select id="priority">
+              <option value="Low">Low</option>
+              <option value="Medium" selected>Medium</option>
+              <option value="High">High</option>
+            </select>
+          </label>
+        </div>
+        <div class="form-actions">
+          <button class="primary" type="submit" id="submitButton">Add assignment</button>
+          <button class="secondary hidden" type="button" id="cancelEdit">Cancel edit</button>
+        </div>
+      </form>
+    </section>
+
+    <section class="panel">
+      <div class="list-heading">
+        <div><h2>Your assignments</h2><p class="muted">Update progress as you work.</p></div>
+        <div class="filters">
+          <input id="search" type="search" placeholder="Search assignments" aria-label="Search assignments">
+          <select id="statusFilter" aria-label="Filter by status">
+            <option value="All">All statuses</option>
+            <option value="Pending">Pending</option>
+            <option value="Completed">Completed</option>
+          </select>
+        </div>
+      </div>
+      <div id="assignmentList" class="assignment-list"></div>
+      <p id="emptyMessage" class="empty">No assignments yet. Add your first assignment above.</p>
+    </section>
+    <footer>College Assignment Tracker · Your tasks are saved in this browser.</footer>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
